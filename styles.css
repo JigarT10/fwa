@@ -92,7 +92,7 @@ body {
   pointer-events: none;
 }
 
-/* Tablet and Desktop: 4 images per row */
+/* Tablet: 3 images per row */
 @media (min-width: 600px) {
   :root {
     --gap: 20px;
@@ -103,12 +103,19 @@ body {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .item {
     padding: 16px;
     border-radius: 18px;
+  }
+}
+
+/* Laptop and Desktop: 4 images per row */
+@media (min-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
