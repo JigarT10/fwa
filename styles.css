@@ -10,6 +10,12 @@
   --item-border: rgba(255, 255, 255, 0.08);
   --item-hover-bg: rgba(255, 255, 255, 0.08);
   --item-hover-border: rgba(255, 255, 255, 0.18);
+  --number-color: rgba(255, 255, 255, 0.65);
+  --number-bg: rgba(255, 255, 255, 0.06);
+  --number-border: rgba(255, 255, 255, 0.1);
+  --number-hover-color: #ffffff;
+  --number-hover-bg: rgba(255, 255, 255, 0.12);
+  --number-hover-border: rgba(255, 255, 255, 0.22);
   --gap: 16px;
   --max-width: 820px;
 }
@@ -21,10 +27,17 @@
     --item-border: rgba(0, 0, 0, 0.06);
     --item-hover-bg: #ffffff;
     --item-hover-border: rgba(0, 0, 0, 0.15);
+    --number-color: rgba(0, 0, 0, 0.6);
+    --number-bg: rgba(0, 0, 0, 0.05);
+    --number-border: rgba(0, 0, 0, 0.08);
+    --number-hover-color: #000000;
+    --number-hover-bg: rgba(0, 0, 0, 0.08);
+    --number-hover-border: rgba(0, 0, 0, 0.16);
   }
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -52,6 +65,7 @@ body {
 }
 
 .item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +96,33 @@ body {
   transform: scale(0.97);
 }
 
+.item-number {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: var(--number-color);
+  background: var(--number-bg);
+  border: 1px solid var(--number-border);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  z-index: 2;
+}
+
+.item:hover .item-number {
+  color: var(--number-hover-color);
+  background: var(--number-hover-bg);
+  border-color: var(--number-hover-border);
+}
+
 .item img {
   width: 85%;
   height: 85%;
@@ -106,6 +147,13 @@ body {
 
   .item {
     border-radius: 18px;
+  }
+
+  .item-number {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 3px 7px;
   }
 }
 
