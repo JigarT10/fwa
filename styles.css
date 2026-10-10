@@ -57,7 +57,7 @@ body {
   justify-content: center;
   width: 100%;
   aspect-ratio: 1 / 1;
-  padding: 12px;
+  padding: 0;
   background: var(--item-bg);
   border: 1px solid var(--item-border);
   border-radius: 14px;
@@ -83,10 +83,8 @@ body {
 }
 
 .item img {
-  width: 100%;
-  height: 100%;
-  max-width: 110px;
-  max-height: 110px;
+  width: 85%;
+  height: 85%;
   object-fit: contain;
   display: block;
   pointer-events: none;
@@ -107,7 +105,6 @@ body {
   }
 
   .item {
-    padding: 16px;
     border-radius: 18px;
   }
 }
